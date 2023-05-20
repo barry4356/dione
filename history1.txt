@@ -109,3 +109,19 @@
   109  ifconfig
   110  cd ~/git/dione/
   111  history > history1 
+  112  mv history1 history1.txt
+  113  git add history1.txt 
+  114  git commit -m "Add initial setup command history"
+  115  git config --global user.email "barryd@mail.usf.edu"
+  116  git config --global user.name "Barry"
+  117  git commit -m "Add initial setup command history"
+  118  git push
+  119  ls ~/.ssh/known_hosts 
+  120  ssh-keygen 
+  121  git remote -v
+  122  git remote set-url origin git@github.com:barry4356/dione.git
+  123  git push
+  124  git pull
+  125  git remote -v
+  126  armbianmonitor -m
+  127  history > ~/git/dione/history1.txt 
