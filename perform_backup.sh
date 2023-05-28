@@ -1,14 +1,22 @@
 # Setup Config Variables
-PHOTO_DIRECTORY="/media/usb_mount/Photos"
-BACKUP_DIRECTORY="/media/usb_mount/Backup"
-LOGFILE="/media/usb_mount/Backup/log.txt"
-RAW_PRIMARY_DIR="${PHOTO_DIRECTORY}/Raw"
+LOGFILE="/home/dione/log_$(date +'%m%d%Y').txt"
+GIT_REPO="/home/dione/git/dione"
 
-# Organize Raw Photos
+# Write System Status to Log
 echo "$(date)" &>> ${LOGFILE}
 echo "Checking Disk Usage..." &>> ${LOGFILE}
 df -h &>> ${LOGFILE}
 echo "----------------------" &>> ${LOGFILE}
+echo "Checking CPU Temps..." &>> ${LOGFILE}
+bash ${GIT_REPO}/check_temp.sh &>> ${LOGFILE} 
+echo "----------------------" &>> ${LOGFILE}
+
+# Setup Photo-Backup Config Variables
+PHOTO_DIRECTORY="/media/usb_mount/Photos"
+BACKUP_DIRECTORY="/media/usb_mount/Backup"
+RAW_PRIMARY_DIR="${PHOTO_DIRECTORY}/Raw"
+
+# Organize Raw Photos
 echo "Checking [${RAW_PRIMARY_DIR}] For New Files..." &>> ${LOGFILE}
 for file in $(find ${RAW_PRIMARY_DIR} -maxdepth 1 -type f); do
   #TODO: Bug if the filename has a space in it...
@@ -26,3 +34,15 @@ echo "Checking Disk Usage..." &>> ${LOGFILE}
 df -h &>> ${LOGFILE}
 echo "----------------------" &>> ${LOGFILE}
 echo "" &>> ${LOGFILE}
+
+
+# Send Logfile to Git
+pushd $GIT_REPO &> /dev/null
+git checkout logging
+cp $LOGFILE logs/.
+cat $LOGFILE >> logs/log.txt
+git add logs/*
+git commit -m "$(date +'%d%B%Y'): Added logs"
+git push
+git checkout main
+popd &> /dev/null
