@@ -1,2 +1,3 @@
 UUID=34b686c9-f36e-4f04-91f4-9c1624efdd8e / ext4 defaults,noatime,commit=600,errors=remount-ro 0 1
 tmpfs /tmp tmpfs defaults,nosuid 0 0
+PARTUUID=a0c57eba-f6f8-4b54-b553-830ec5803df0 /mnt/primary_ext_drive ntfs defaults 0 2
