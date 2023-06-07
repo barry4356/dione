@@ -15,5 +15,8 @@ The primary purpose of this system is to provide redundant storage for any data 
 
 ``` mermaid
 graph TD;
-    SDCard --> Raw;
+    SDCard --> RawIngest.sh;
+    RawIngest.sh --> PrimaryRaw;
+    PrimaryRaw --> PerformBackup.sh;
+    PerformBackup.sh --> SecondaryRaw;
 ```
