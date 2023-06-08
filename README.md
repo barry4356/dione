@@ -30,7 +30,7 @@ The Android Backup samba share will contain any data backed up from Barry's Andr
 ``` mermaid
 graph TD;
     SDCard --> AI(AndroidIngest.sh);
-    AI(AndroidIngest.sh) --> PrimaryRaw;
-    PrimaryRaw --> PB(PerformBackup.sh);
-    PB(PerformBackup.sh) --> SecondaryRaw;
+    AI(AndroidIngest.sh) --> PrimaryAndroid;
+    PrimaryAndroid --> PB(PerformBackup.sh);
+    PB(PerformBackup.sh) --> SecondaryAndroid;
 ```
