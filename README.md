@@ -24,5 +24,13 @@ graph TD;
     PB(PerformBackup.sh) --> SecondaryRaw;
 ```
 
-### Android SD Backup
-ToDo
+### Android and its SD Backup
+The Android Backup samba share will contain any data backed up from Barry's Android phone. The share will be accessible to the phone remotely via SMB, and will include a directory for a full backup of the SD card. The SD card full backup can be created by connecting the SD card directly to Dione through an adapter. The full contents of the SD card will be compressed, and transferred to the Primary drive with the `AndroidIngest.sh` script using rsync. The `PerformBackup.sh` script will rsync the raw photo directory with its corresponding directory on the secondary drive.
+
+``` mermaid
+graph TD;
+    SDCard --> AI(AndroidIngest.sh);
+    AI(AndroidIngest.sh) --> PrimaryRaw;
+    PrimaryRaw --> PB(PerformBackup.sh);
+    PB(PerformBackup.sh) --> SecondaryRaw;
+```
