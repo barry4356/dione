@@ -40,7 +40,7 @@ rsync -rv ${PC_BACKUP_DIR} ${BACKUP_DIRECTORY} --log-file=${LOGFILE}
 # Sync Android Backup to Secondary Drive
 ANDROID_BACKUP_DIR="/mnt/primary_ext_drive/AndroidBackup"
 echo "Sync-ing [${ANDROID_BACKUP_DIR}] with [${BACKUP_DIRECTORY}]" &>> ${LOGFILE}
-rsync -rv ${Android_BACKUP_DIR} ${BACKUP_DIRECTORY} --log-file=${LOGFILE}
+rsync -rv ${ANDROID_BACKUP_DIR} ${BACKUP_DIRECTORY} --log-file=${LOGFILE}
 
 # Check Disk Usage
 echo "Checking Disk Usage..." &>> ${LOGFILE}
