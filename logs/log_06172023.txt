@@ -72,3 +72,50 @@ Checking CPU Temps...
 cpu-thermal  89.5°C
 gpu-thermal  85.8°C
 ----------------------
+
+Sat Jun 17 06:29:16 PM EDT 2023
+Checking Disk Usage...
+Filesystem     1G-blocks  Used Available Use% Mounted on
+tmpfs                 1G    1G        1G   5% /run
+/dev/mmcblk0p1       29G    3G       26G   8% /
+tmpfs                 1G    0G        1G   0% /dev/shm
+tmpfs                 1G    1G        1G   1% /run/lock
+tmpfs                 1G    0G        1G   0% /tmp
+/dev/sdb2          4658G   13G     4645G   1% /mnt/secondary_ext_drive
+/dev/sdc2          4658G   76G     4582G   2% /mnt/primary_ext_drive
+/dev/zram1            1G    1G        1G   8% /var/log
+tmpfs                 1G    0G        1G   0% /run/user/1000
+/dev/sda1           120G  110G       10G  92% /mnt/SDCard
+----------------------
+Checking CPU Temps...
+cpu-thermal  87.9°C
+gpu-thermal  86.4°C
+----------------------
+Sync-ing [/mnt/primary_ext_drive/Photos] with [/mnt/secondary_ext_drive/Backup]
+Sync-ing [/mnt/primary_ext_drive/PCBackup] with [/mnt/secondary_ext_drive/Backup]
+2023/06/17 18:29:16 [9996] building file list
+2023/06/17 18:29:59 [9996] >f+++++++++ PCBackup/GoogleDriveBackup/GradSchool/Masters/Summer 2023/ROI.pdf
+2023/06/17 18:29:59 [9996] sent 1,038,842 bytes  received 3,619 bytes  23,964.62 bytes/sec
+2023/06/17 18:29:59 [9996] total size is 4,938,051,169  speedup is 4,736.92
+Sync-ing [/mnt/primary_ext_drive/AndroidBackup] with [/mnt/secondary_ext_drive/Backup]
+2023/06/17 18:29:59 [10038] building file list
+2023/06/17 18:30:01 [10038] sent 69,410 bytes  received 18 bytes  27,771.20 bytes/sec
+2023/06/17 18:30:01 [10038] total size is 8,116,331,066  speedup is 116,902.85
+Sat Jun 17 06:30:01 PM EDT 2023
+Checking Disk Usage...
+Filesystem     1G-blocks  Used Available Use% Mounted on
+tmpfs                 1G    1G        1G   5% /run
+/dev/mmcblk0p1       29G    3G       26G   8% /
+tmpfs                 1G    0G        1G   0% /dev/shm
+tmpfs                 1G    1G        1G   1% /run/lock
+tmpfs                 1G    0G        1G   0% /tmp
+/dev/sdb2          4658G   13G     4645G   1% /mnt/secondary_ext_drive
+/dev/sdc2          4658G   77G     4582G   2% /mnt/primary_ext_drive
+/dev/zram1            1G    1G        1G   8% /var/log
+tmpfs                 1G    0G        1G   0% /run/user/1000
+/dev/sda1           120G  110G       10G  92% /mnt/SDCard
+----------------------
+Checking CPU Temps...
+cpu-thermal  92.7°C
+gpu-thermal  86.8°C
+----------------------
