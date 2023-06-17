@@ -28,12 +28,5 @@ rsync -rv --update ${ANDROID_BACKUP_DIR} ${BACKUP_DIRECTORY} --log-file=${LOGFIL
 # Write System Status to Log
 ${ROOT_DIR}/check_status.sh &>> ${LOGFILE}
 
-# Send Logfile to Git
-pushd $LOG_REPO &> /dev/null
-git checkout logging
-cp $LOGFILE logs/.
-cat $LOGFILE >> logs/log.txt
-git add logs/*
-git commit -m "$(date +'%d%B%Y'): Added logs"
-git push
-popd &> /dev/null
+# Export log to git repository
+${ROOT_DIR}/export_log.sh

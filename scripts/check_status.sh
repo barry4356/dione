@@ -1,3 +1,7 @@
+# Source Main Config File
+CONFIG_FILE="/home/dione/scripts/config.sh"
+source ${CONFIG_FILE}
+
 # Report Disk Usage and CPU Temps
 echo "$(date)"
 echo "Checking Disk Usage..."
