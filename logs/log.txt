@@ -1,0 +1,28 @@
+
+Sat Jun 17 05:44:19 PM EDT 2023
+Checking Disk Usage...
+df: invalid option -- 'G'
+Try 'df --help' for more information.
+----------------------
+Checking CPU Temps...
+cpu-thermal  89.9°C
+gpu-thermal  86.6°C
+----------------------
+Sync-ing [/mnt/primary_ext_drive/Photos] with [/mnt/secondary_ext_drive/Backup]
+Sync-ing [/mnt/primary_ext_drive/PCBackup] with [/mnt/secondary_ext_drive/Backup]
+2023/06/17 17:44:19 [6379] building file list
+2023/06/17 17:44:41 [6379] sent 974,032 bytes  received 3,592 bytes  43,449.96 bytes/sec
+2023/06/17 17:44:41 [6379] total size is 4,937,986,434  speedup is 5,051.01
+Sync-ing [/mnt/primary_ext_drive/AndroidBackup] with [/mnt/secondary_ext_drive/Backup]
+2023/06/17 17:44:41 [6407] building file list
+2023/06/17 17:44:43 [6407] sent 69,410 bytes  received 18 bytes  27,771.20 bytes/sec
+2023/06/17 17:44:43 [6407] total size is 8,116,331,066  speedup is 116,902.85
+Sat Jun 17 05:44:43 PM EDT 2023
+Checking Disk Usage...
+df: invalid option -- 'G'
+Try 'df --help' for more information.
+----------------------
+Checking CPU Temps...
+cpu-thermal  90.0°C
+gpu-thermal  86.9°C
+----------------------
