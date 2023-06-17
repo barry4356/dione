@@ -1,6 +1,6 @@
 # Setup Config Variables
 LOGFILE="/home/dione/log_$(date +'%m%d%Y').txt"
-GIT_REPO="/home/dione/git/dione"
+LOG_REPO="/home/dione/git/logs"
 
 # Write System Status to Log
 echo "$(date)" &>> ${LOGFILE}
@@ -8,7 +8,7 @@ echo "Checking Disk Usage..." &>> ${LOGFILE}
 df -h &>> ${LOGFILE}
 echo "----------------------" &>> ${LOGFILE}
 echo "Checking CPU Temps..." &>> ${LOGFILE}
-bash ${GIT_REPO}/check_temp.sh &>> ${LOGFILE} 
+bash ${LOG_REPO}/check_temp.sh &>> ${LOGFILE} 
 echo "----------------------" &>> ${LOGFILE}
 
 # Setup Photo-Backup Config Variables
@@ -30,17 +30,17 @@ RAW_PRIMARY_DIR="${PHOTO_DIRECTORY}/Raw"
 
 # Sync Photos to Backup
 echo "Sync-ing [${PHOTO_DIRECTORY}] with [${BACKUP_DIRECTORY}]" &>> ${LOGFILE}
-rsync -rv ${PHOTO_DIRECTORY} ${BACKUP_DIRECTORY} --log-file=${LOGFILE}
+rsync -rv --update ${PHOTO_DIRECTORY} ${BACKUP_DIRECTORY} --log-file=${LOGFILE}
 
 # Sync PC Backup to Secondary Drive
 PC_BACKUP_DIR="/mnt/primary_ext_drive/PCBackup"
 echo "Sync-ing [${PC_BACKUP_DIR}] with [${BACKUP_DIRECTORY}]" &>> ${LOGFILE}
-rsync -rv ${PC_BACKUP_DIR} ${BACKUP_DIRECTORY} --log-file=${LOGFILE}
+rsync -rv --update ${PC_BACKUP_DIR} ${BACKUP_DIRECTORY} --log-file=${LOGFILE}
 
 # Sync Android Backup to Secondary Drive
 ANDROID_BACKUP_DIR="/mnt/primary_ext_drive/AndroidBackup"
 echo "Sync-ing [${ANDROID_BACKUP_DIR}] with [${BACKUP_DIRECTORY}]" &>> ${LOGFILE}
-rsync -rv ${ANDROID_BACKUP_DIR} ${BACKUP_DIRECTORY} --log-file=${LOGFILE}
+rsync -rv --update ${ANDROID_BACKUP_DIR} ${BACKUP_DIRECTORY} --log-file=${LOGFILE}
 
 # Check Disk Usage
 echo "Checking Disk Usage..." &>> ${LOGFILE}
@@ -49,12 +49,11 @@ echo "----------------------" &>> ${LOGFILE}
 echo "" &>> ${LOGFILE}
 
 # Send Logfile to Git
-pushd $GIT_REPO &> /dev/null
+pushd $LOG_REPO &> /dev/null
 git checkout logging
 cp $LOGFILE logs/.
 cat $LOGFILE >> logs/log.txt
 git add logs/*
 git commit -m "$(date +'%d%B%Y'): Added logs"
 git push
-git checkout main
 popd &> /dev/null
