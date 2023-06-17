@@ -26,3 +26,77 @@ Checking CPU Temps...
 cpu-thermal  90.0°C
 gpu-thermal  86.9°C
 ----------------------
+
+Sat Jun 17 05:44:19 PM EDT 2023
+Checking Disk Usage...
+df: invalid option -- 'G'
+Try 'df --help' for more information.
+----------------------
+Checking CPU Temps...
+cpu-thermal  89.9°C
+gpu-thermal  86.6°C
+----------------------
+Sync-ing [/mnt/primary_ext_drive/Photos] with [/mnt/secondary_ext_drive/Backup]
+Sync-ing [/mnt/primary_ext_drive/PCBackup] with [/mnt/secondary_ext_drive/Backup]
+2023/06/17 17:44:19 [6379] building file list
+2023/06/17 17:44:41 [6379] sent 974,032 bytes  received 3,592 bytes  43,449.96 bytes/sec
+2023/06/17 17:44:41 [6379] total size is 4,937,986,434  speedup is 5,051.01
+Sync-ing [/mnt/primary_ext_drive/AndroidBackup] with [/mnt/secondary_ext_drive/Backup]
+2023/06/17 17:44:41 [6407] building file list
+2023/06/17 17:44:43 [6407] sent 69,410 bytes  received 18 bytes  27,771.20 bytes/sec
+2023/06/17 17:44:43 [6407] total size is 8,116,331,066  speedup is 116,902.85
+Sat Jun 17 05:44:43 PM EDT 2023
+Checking Disk Usage...
+df: invalid option -- 'G'
+Try 'df --help' for more information.
+----------------------
+Checking CPU Temps...
+cpu-thermal  90.0°C
+gpu-thermal  86.9°C
+----------------------
+
+Sat Jun 17 05:46:50 PM EDT 2023
+Checking Disk Usage...
+Filesystem     1G-blocks  Used Available Use% Mounted on
+tmpfs                 1G    1G        1G   5% /run
+/dev/mmcblk0p1       29G    3G       26G   8% /
+tmpfs                 1G    0G        1G   0% /dev/shm
+tmpfs                 1G    1G        1G   1% /run/lock
+tmpfs                 1G    0G        1G   0% /tmp
+/dev/sdb2          4658G   13G     4645G   1% /mnt/secondary_ext_drive
+/dev/sdc2          4658G   36G     4623G   1% /mnt/primary_ext_drive
+/dev/zram1            1G    1G        1G   8% /var/log
+tmpfs                 1G    0G        1G   0% /run/user/1000
+/dev/sda1           120G  110G       10G  92% /mnt/SDCard
+----------------------
+Checking CPU Temps...
+cpu-thermal  88.6°C
+gpu-thermal  86.6°C
+----------------------
+Sync-ing [/mnt/primary_ext_drive/Photos] with [/mnt/secondary_ext_drive/Backup]
+Sync-ing [/mnt/primary_ext_drive/PCBackup] with [/mnt/secondary_ext_drive/Backup]
+2023/06/17 17:46:50 [6636] building file list
+2023/06/17 17:47:11 [6636] sent 974,032 bytes  received 3,592 bytes  47,688.98 bytes/sec
+2023/06/17 17:47:11 [6636] total size is 4,937,986,434  speedup is 5,051.01
+Sync-ing [/mnt/primary_ext_drive/AndroidBackup] with [/mnt/secondary_ext_drive/Backup]
+2023/06/17 17:47:11 [6667] building file list
+2023/06/17 17:47:13 [6667] sent 69,410 bytes  received 18 bytes  27,771.20 bytes/sec
+2023/06/17 17:47:13 [6667] total size is 8,116,331,066  speedup is 116,902.85
+Sat Jun 17 05:47:13 PM EDT 2023
+Checking Disk Usage...
+Filesystem     1G-blocks  Used Available Use% Mounted on
+tmpfs                 1G    1G        1G   5% /run
+/dev/mmcblk0p1       29G    3G       26G   8% /
+tmpfs                 1G    0G        1G   0% /dev/shm
+tmpfs                 1G    1G        1G   1% /run/lock
+tmpfs                 1G    0G        1G   0% /tmp
+/dev/sdb2          4658G   13G     4645G   1% /mnt/secondary_ext_drive
+/dev/sdc2          4658G   36G     4622G   1% /mnt/primary_ext_drive
+/dev/zram1            1G    1G        1G   8% /var/log
+tmpfs                 1G    0G        1G   0% /run/user/1000
+/dev/sda1           120G  110G       10G  92% /mnt/SDCard
+----------------------
+Checking CPU Temps...
+cpu-thermal  89.5°C
+gpu-thermal  85.8°C
+----------------------
