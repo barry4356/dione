@@ -20,8 +20,8 @@ Lindsey's Nikon camera creates pseudo-unique names for each image file by defaul
 graph TD;
     SDCard --> RI(RawIngest.sh);
     RI(RawIngest.sh) --> PrimaryRaw;
-    PrimaryRaw --> RS(PrimarySort.sh);
-    RS(PrimarySort.sh) --> PrimaryRaw;
+    PrimaryRaw --> RS(RawSort.sh);
+    RS(RawSort.sh) --> PrimaryRaw;
     PrimaryRaw --> PB(PerformBackup.sh);
     PB(PerformBackup.sh) --> SecondaryRaw;
 ```
