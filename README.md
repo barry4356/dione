@@ -22,8 +22,6 @@ graph TD;
     CD1(check_duplicates.sh) --> SDCard;
     SDCard --> RI(RawIngest.sh);
     RI(RawIngest.sh) --> PrimaryRaw;
-    PrimaryRaw --> CD2(check_duplicates.sh);
-    CD2(check_duplicates.sh) --> PrimaryRaw;
     PrimaryRaw --> RS(RawSort.sh);
     RS(RawSort.sh) --> PrimaryRaw;
     PrimaryRaw --> PB(PerformBackup.sh);
