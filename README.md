@@ -10,8 +10,8 @@ Local Network NAS
 | PS | Wenter 36W powered USB hub |
 | | |
 
-## Functionality 
-The primary purpose of this system is to provide redundant storage for any data that needs to be backed up. This includes **Lindsey's Photos**, **Barry's Android Files**, **Barry's old Google Drive Snapshot**, and any other data that needs to persist long term.
+## Usage 
+The primary purpose of this system is to provide redundant storage for any data that needs to be backed up. This includes **Lindsey's Photos**, **Barry's Android Files**, **Barry's old Google Drive Snapshot**, and any other data that needs to persist long term. Each individual function has been broken into a separate shell script, and any shared const vars are sourced from the `config.sh` script.
 
 ### Raw Photo Backup
 Lindsey's Nikon camera creates pseudo-unique names for each image file by default. The `RawIngest.sh` script pulls these files from the SD card into the Raw photo directory on the NAS. The `RawSort.sh` script creates a subdirectory named by the month/year of each image file, moves the files to these subdirectories, and deconflicts any matching filenames within the subdirectories. The `PerformBackup.sh` script will rsync the raw photo directory with its corresponding directory on the secondary drive.
