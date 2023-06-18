@@ -1,17 +1,25 @@
 # Source Main Config File
 CONFIG_FILE="/home/dione/scripts/config.sh"
 source ${CONFIG_FILE}
+echo "" &>> ${LOGFILE}
 
-RAW_PRIMARY_DIR="${PHOTO_DIRECTORY}/Raw"
+SD_RAW_DIR="/mnt/SDCard/DCIM"
 
-# Organize Raw Photos
-echo "Checking [${RAW_PRIMARY_DIR}] For New Files..." &>> ${LOGFILE}
-for file in $(find ${RAW_PRIMARY_DIR} -maxdepth 1 -type f); do
-  #TODO: Bug if the filename has a space in it...
-  DIRNAME=$(date -r ${file} +'%B%Y')
-  RAW_DATE_DIR="${RAW_PRIMARY_DIR}/$DIRNAME"
-  echo "Moving [$file] to [${RAW_DATE_DIR}]..." &>> ${LOGFILE}
-  mkdir -p ${RAW_DATE_DIR}
-  # mv -S .orig -b $file ${RAW_DATE_DIR}/.
-  cp --backup=t $file ${RAW_DATE_DIR}/. && rm $file
+# Write System Status to Log
+${ROOT_DIR}/check_status.sh &>> ${LOGFILE}
+
+echo "Ingesting Image Files From [${SD_RAW_DIR}]"
+
+# Ingest Raw Photos
+echo "Checking [${SD_RAW_DIR}] For Image Files..." &>> ${LOGFILE}
+for directory in $(find ${SD_RAW_DIR} -maxdepth 1 -mindepth 1 -type d); do
+  SD_DIRECTORY=$directory
+  echo "Ingesting Image Files From [${SD_DIRECTORY}]..." &>> ${LOGFILE}
+  rsync -avt --update ${SD_DIRECTORY}/* ${RAW_PRIMARY_DIR} --log-file=${LOGFILE}
 done
+
+# Write System Status to Log
+${ROOT_DIR}/check_status.sh &>> ${LOGFILE}
+
+# Export log to git repository
+${ROOT_DIR}/export_log.sh

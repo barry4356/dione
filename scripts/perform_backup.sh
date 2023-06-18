@@ -3,8 +3,6 @@ CONFIG_FILE="/home/dione/scripts/config.sh"
 source ${CONFIG_FILE}
 
 # Set additional config vars
-PHOTO_DIRECTORY="/mnt/primary_ext_drive/Photos"
-BACKUP_DIRECTORY="/mnt/secondary_ext_drive/Backup"
 PC_BACKUP_DIR="/mnt/primary_ext_drive/PCBackup"
 ANDROID_BACKUP_DIR="/mnt/primary_ext_drive/AndroidBackup"
 
