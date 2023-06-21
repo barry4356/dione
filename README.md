@@ -1,5 +1,7 @@
 # Dione
-Local Network NAS
+**D**igital **I**ndex **o**f **N**early **E**verything
+## Overview
+Provides NAS services for local network, backing up important data and providing access to local media over Wifi as an SMB server.
 ## Specs
 | | |
 | ----------- | ----------- |
